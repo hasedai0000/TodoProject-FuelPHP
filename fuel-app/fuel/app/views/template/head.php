@@ -1,6 +1,6 @@
 <?php ?>
 
+<meta charset="UTF-8">
 <title>title</title>
-fuel/app/views/template/head.php
-<div class="logo"></div>
-<div class="logo_text">sub_title</div>
+<?php echo Asset::css('bootstrap.css'); ?>
+<link rel="icon" href="<?php echo Asset::get_file('favicon.ico', 'img', 'icons/'); ?>">
