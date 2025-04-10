@@ -1,16 +1,17 @@
 <?php
-class Controller_Home extends Controller
+
+use Fuel\Core\Controller_Template;
+
+class Controller_Home extends Controller_Template
 {
-  public function action_index()
+
+  public $template = 'template/index';
+
+  public function action_index($param1 = null, $param2 = null)
   {
     //変数としてビューを割り当てる
-    $view = View::forge('home/index'); //テンプレートとなるビューファイルの読込み
-    $view->set('head', View::forge('template/head'));
-    $view->set('contents', View::forge('home/content'));
-    $view->set('footer', View::forge('template/footer'));
-    $view->set_global('username', 'Daichi');
-
-    // レンダリングした HTML をリクエストに返す
-    return $view;
+    $this->template->head = View::forge('template/head');
+    $this->template->contents = View::forge('home/content');
+    $this->template->footer = View::forge('template/footer');
   }
 }
