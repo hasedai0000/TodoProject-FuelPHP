@@ -12,3 +12,20 @@ services:
     ports:
       - "8080:8080"
     command: "php -S 0.0.0.0:8080 -t public"
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: fuel_db
+      MYSQL_USER: fuel
+      MYSQL_PASSWORD: fuel_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Fuel is a fast, lightweight, community driven PHP 5.4+ framework.
  *
@@ -21,5 +22,32 @@
  */
 
 return array(
+  'active' => 'fuel_db',
 
+  'default' => array(
+    'type' => 'pdo',
+    'connection' => array(
+      'persistent' => false,
+    ),
+    'identifier' => '`',
+    'table_prefix' => '',
+    'charset' => 'utf8',
+    'enable_cache' => true,
+    'profiling' => true,
+  ),
+  // データベース名
+  'fuel_db' => array(
+    'type' => 'pdo',
+    'connection' => array(
+      'hostname' => 'mysql',
+      'database' => 'fuel_db',
+      'username' => 'fuel',
+      'password' => 'fuel_pass',
+      'persistent' => false,
+    ),
+    'table_prefix' => '',
+    'charset' => 'utf8',
+    'enable_cache' => true,
+    'profiling' => true,
+  ),
 );
