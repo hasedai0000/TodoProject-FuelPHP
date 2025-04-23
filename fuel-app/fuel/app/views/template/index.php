@@ -5,9 +5,9 @@
 </head>
 
 <body>
+ <?php echo $header; ?>
  <?php echo $contents; ?>
  <?php echo $footer; ?>
- <?php echo $data; ?>
 </body>
 
 </html>

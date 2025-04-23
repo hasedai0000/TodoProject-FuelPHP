@@ -39,12 +39,12 @@ return array(
   'fuel_db' => array(
     'type' => 'pdo',
     'connection' => array(
-      'hostname' => 'mysql',
-      'database' => 'fuel_db',
+      'dsn' => 'mysql:host=mysql;dbname=fuel_db;charset=utf8',
       'username' => 'fuel',
       'password' => 'fuel_pass',
       'persistent' => false,
     ),
+    'identifier'   => '`',
     'table_prefix' => '',
     'charset' => 'utf8',
     'enable_cache' => true,
