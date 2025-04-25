@@ -16,6 +16,18 @@ if (!empty($errMsg)):
 
 <header class="header">
   <div class="site-width">
-    ToDoList
+    <div class="header-left">
+      ToDoList
+    </div>
+    <nav class="header-right">
+      <?php if (Auth::check()): ?>
+        <!-- ログイン済みの場合 -->
+        <a href="/signout" class="nav-btn">ログアウト</a>
+      <?php else: ?>
+        <!-- 未ログインの場合 -->
+        <a href="/signup" class="nav-btn">新規登録</a>
+        <a href="/signin" class="nav-btn">ログイン</a>
+      <?php endif; ?>
+    </nav>
   </div>
 </header>
