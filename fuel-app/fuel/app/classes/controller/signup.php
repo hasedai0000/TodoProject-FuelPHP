@@ -52,8 +52,13 @@ class Controller_Signup extends Controller_Template
         $formData = $val->validated();
         $auth = Auth::instance();
         if ($auth->create_user($formData['username'], $formData['password'], $formData['email'])) {
-          Session::set_flash('sucMsg', 'ユーザー登録が完了しました。');
-          Response::redirect('/member/mypage');
+          // ユーザー作成後、すぐにログイン処理を実行
+          if ($auth->login($formData['username'], $formData['password'])) {
+            Session::set_flash('sucMsg', 'ユーザー登録が完了しました。');
+            Response::redirect('/member/mypage');
+          } else {
+            Session::set_flash('errMsg', 'ログインに失敗しました。');
+          }
         } else {
           Session::set_flash('errMsg', 'ユーザー登録に失敗しました。');
         }
