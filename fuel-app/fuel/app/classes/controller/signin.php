@@ -16,6 +16,11 @@ class Controller_Signin extends Controller_Template
 
   public function action_index()
   {
+    // ログイン済みの場合はマイページにリダイレクト
+    if (Auth::check()) {
+      Response::redirect('/member/mypage');
+    }
+
     $error = '';
     $formData = '';
 
