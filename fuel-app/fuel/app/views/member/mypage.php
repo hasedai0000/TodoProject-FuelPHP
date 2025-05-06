@@ -1,7 +1,10 @@
 <div class="ctn-main">
-  <session class="ctn-form">
+  <div class="ctn-form">
     <h1>マイページ</h1>
-    <p>ユーザー ID：<?= $user['user_id']; ?></p>
-    <p>ユーザー名：<?= $user['user_name']; ?></p>
-  </session>
+    <ul class="user-info">
+      <li>ユーザー ID：<?= $user['user_id']; ?></li>
+      <li>ユーザー名：<?= $user['username']; ?></li>
+      <li>メールアドレス：<?= $user['email']; ?></li>
+    </ul>
+  </div>
 </div>
